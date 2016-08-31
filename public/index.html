@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>IBM SPSS Predictive Modeling service Time Series sample scoring application</title>
 		<link rel="stylesheet" href="css/type.css" type="text/css" media="screen, projection" />
-		<!--link rel="stylesheet" href="css/layout.css" type="text/css" media="screen, projection" /-->
 		<!-- Twitter Bootstrap -->
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bluemix_style.css" type="text/css" media="screen, projection" />
@@ -22,7 +21,7 @@
               <a class="button-color nav-text" href="/">Application</a>
             </li>
             <li>
-              <a class="button-color nav-text" href="https://github.com/pmservice/profits-forecast/blob/master/documentation/IBM%20Predictive%20Analytics%20Service%20for%20Bluemix%20-%20Sample%202_deploy.pdf">Overview</a>
+              <a class="button-color nav-text" href="/overview.html">Overview</a>
             </li>
           </ul>
         </div>
@@ -50,20 +49,22 @@
 		</nav>
 
     <div class="container wide-container">
-      <!--div class="small-nav"></div-->
+      <div class="small-nav"></div>
 			<div class="page-header"></div>
       <div class="well base-color2 special-border">
 				<h3>Data Input</h3>
         <hr class="special-border" />
       	<div class="body">
-          Application will use <b>{{modelType[mIdx]}}</b> model
-      		<div class="section">
-      			Catalog Sales:&nbsp;&nbsp;
-      					<input type="radio" ng-model="mIdx" value="0">Men's Clothing</input>&nbsp;&nbsp;
-      					<input type="radio" ng-model="mIdx" value="1">Women's Clothing</input><br>
-      			<div class="section">
+          Application will use <b>{{modelType[mIdx]}}</b> model <br /><br />
+      		<div class="form-group">
+            <div class="form-group">
+      			  <label>Catalog Sales:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+      				<input type="radio" ng-model="mIdx" value="0">&nbsp;&nbsp;Men's Clothing</input>&nbsp;&nbsp;&nbsp;&nbsp;
+      				<input type="radio" ng-model="mIdx" value="1">&nbsp;&nbsp;Women's Clothing</input><br>
+            </div>
+      			<div class="form-group">
       				<div ng-repeat="sval in sales track by $index">
-      					Sales Input: {{$index +1}}  <input type="numeric" class="light-color2" ng-model="sales[$index]" required></input><br /><br />
+      					<label>Sales Input: {{$index +1}}</label>  <input type="numeric" class="light-color2" ng-model="sales[$index]" required></input><br /><br />
       				</div>
       			</div>
       			<button type="button" class="btn btn-primary" ng-click="score()"><i class="glyphicon glyphicon-cloud-upload"></i>&nbsp;Score Now&nbsp;</button>
