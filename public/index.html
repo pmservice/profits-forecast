@@ -1,35 +1,86 @@
 <!doctype html>
 <html lang="en">
 		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>IBM SPSS Predictive Modeling service Time Series sample scoring application</title>
 		<link rel="stylesheet" href="css/type.css" type="text/css" media="screen, projection" />
-		<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen, projection" />
+		<!--link rel="stylesheet" href="css/layout.css" type="text/css" media="screen, projection" /-->
 		<!-- Twitter Bootstrap -->
-		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">  
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bluemix_style.css" type="text/css" media="screen, projection" />
 <head>
 </head>
-	<body ng-app="tsSample" ng-controller="AppCtrl" >
-	<div class="title"><img alt="" src="img/pm24x24.png" />&nbsp;IBM SPSS Predictive Modeling service <b>"{{modelType[mIdx]}}"</b> scoring applicaiton</div>
-	<div class="body">
-		<div class="section">
-			Catalog Sales:&nbsp;&nbsp;
-					<input type="radio" ng-model="mIdx" value="0">Men's Clothing</input>&nbsp;&nbsp;
-					<input type="radio" ng-model="mIdx" value="1">Women's Clothing</input><br>
-			<div class="section">
-				<div ng-repeat="sval in sales track by $index">
-					Sales Input: {{$index +1}}  <input type="numeric" ng-model="sales[$index]" required></input><br /><br />
-				</div>
+<body ng-app="tsSample" ng-controller="AppCtrl" class="base-color4">
+		<nav class="navbar navbar-default navbar-fixed-top lower-nav base-color2 no-border shadowed" role="navigation">
+      <div class="container wide-container">
+        <div class="navbar-header">
+          <p id="application-name" class="navbar-brand">Profits Forecast Application</p>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a class="button-color nav-text" href="/">Application</a>
+            </li>
+            <li>
+              <a class="button-color nav-text" href="https://github.com/pmservice/profits-forecast/blob/master/documentation/IBM%20Predictive%20Analytics%20Service%20for%20Bluemix%20-%20Sample%202_deploy.pdf">Overview</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+		<nav class="navbar navbar-default navbar-fixed-top small-nav base-color no-border shadowed" role="navigation">
+			<div class="container wide-container">
+				<div class="navbar-collapse collapse small-nav" id="navbar-main">
+          <ul class="nav navbar-nav small-nav">
+            <li>
+							<a href="https://new-console.ng.bluemix.net/" class="h5 button-color" target="_blank">
+								<img src="img/bluemix_icon.png" class="inline-icon">
+								IBM Bluemix
+							</a>
+            </li>
+						<li>
+							<a href="https://console.ng.bluemix.net/docs/#services/PredictiveModeling/index.html" class="h5 button-color" target="_blank">
+								<img src="img/pa_icon.png" class="inline-icon">
+								Predictive Analytics
+							</a>
+						</li>
+          </ul>
+        </div>
 			</div>
-			<button type="button" class="btn.lg" ng-click="score()"><i class="glyphicon glyphicon-cloud-upload"></i>&nbsp;Score Now&nbsp;</button>
-		</div>
-	</div>	
-	
-	</body>
-	
-	<!-- load angular via CDN -->
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>    
-	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>    
+		</nav>
+
+    <div class="container wide-container">
+      <!--div class="small-nav"></div-->
+			<div class="page-header"></div>
+      <div class="well base-color2 special-border">
+				<h3>Data Input</h3>
+        <hr class="special-border" />
+      	<div class="body">
+          Application will use <b>{{modelType[mIdx]}}</b> model
+      		<div class="section">
+      			Catalog Sales:&nbsp;&nbsp;
+      					<input type="radio" ng-model="mIdx" value="0">Men's Clothing</input>&nbsp;&nbsp;
+      					<input type="radio" ng-model="mIdx" value="1">Women's Clothing</input><br>
+      			<div class="section">
+      				<div ng-repeat="sval in sales track by $index">
+      					Sales Input: {{$index +1}}  <input type="numeric" class="light-color2" ng-model="sales[$index]" required></input><br /><br />
+      				</div>
+      			</div>
+      			<button type="button" class="btn btn-primary" ng-click="score()"><i class="glyphicon glyphicon-cloud-upload"></i>&nbsp;Score Now&nbsp;</button>
+      		</div>
+      	</div>
+    </div>
+
+	</div>
+
+	<script src="bundle.js" type="text/javascript"></script>
+  </body>
+
+  <!-- load angular via CDN -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
 	<!-- our scripts -->
 	<script src="js/app.js"  type="text/javascript" ></script>
 	<script src="js/srv.js"  type="text/javascript" ></script>
+
 </html>
