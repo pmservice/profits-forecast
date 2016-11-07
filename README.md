@@ -1,2 +1,2 @@
 # About
-#### Drug Selection for Treating Heart Problems - sample application takes inputs found to be primary predictors in drug selection for treating heart problems and predicts the drug it believes to be the best choice for the patient.
+#### Forecast Profits for Clothing Sales - sample uses a TimeSeries predictive model trained on recent purchase history of men's clothing to forecast profits for the next 4 time periods or a Streaming TimeSeries self-learning model to dynamically learn how to predict the next 4 time periods based on past purchases by women. Both take a input of sales data on a current time period to make their prediction.
