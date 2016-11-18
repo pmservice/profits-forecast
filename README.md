@@ -12,4 +12,5 @@
 
 
 #### After successful models upload deployed application should provide scoring capability as shown below.
-![alt text](https://cloud.githubusercontent.com/assets/23261116/20431696/befa68f2-ad9b-11e6-884c-185abe6feb09.jpg "Application")
+
+![alt text](https://cloud.githubusercontent.com/assets/23261116/20431696/befa68f2-ad9b-11e6-884c-185abe6feb09.jpg  "Application")
